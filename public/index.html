@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Linkly — Smart URL Shortener</title>
+
+    <meta
+        name="description"
+        content="Create short, fast and shareable links with Linkly."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+
+        <a href="/" class="logo">
+            <span class="logo-icon">↗</span>
+            <span>Linkly</span>
+        </a>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            Service Online
+        </div>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                <span>⚡</span>
+                Fast & Reliable URL Shortener
+            </div>
+
+            <h1>
+                Turn long links into
+                <span>short links.</span>
+            </h1>
+
+            <p class="hero-text">
+                Create clean, shareable URLs in seconds.
+                Simple, fast and built for everyone.
+            </p>
+
+
+            <!-- SHORTENER CARD -->
+
+            <div class="shortener-card">
+
+                <div class="input-header">
+                    <label for="urlInput">Paste your long URL</label>
+
+                    <span id="counter">0 / 2048</span>
+                </div>
+
+
+                <div class="input-wrapper">
+
+                    <span class="link-icon">🔗</span>
+
+                    <input
+                        type="url"
+                        id="urlInput"
+                        placeholder="https://example.com/your/long/url"
+                        maxlength="2048"
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="button"
+                        id="clearBtn"
+                        class="clear-btn hidden"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <button
+                    id="shortenBtn"
+                    class="shorten-btn"
+                    type="button"
+                >
+                    <span id="buttonText">Shorten URL</span>
+                    <span id="buttonLoader" class="loader hidden"></span>
+                    <span id="buttonArrow">→</span>
+                </button>
+
+
+                <p id="errorMessage" class="error-message hidden"></p>
+
+
+                <!-- RESULT -->
+
+                <div id="resultBox" class="result-box hidden">
+
+                    <div class="result-title">
+                        <span class="success-icon">✓</span>
+
+                        <div>
+                            <strong>Your short link is ready!</strong>
+                            <small>Share it anywhere you want.</small>
+                        </div>
+                    </div>
+
+
+                    <div class="result-url">
+
+                        <input
+                            id="shortUrl"
+                            type="text"
+                            readonly
+                        >
+
+                        <button
+                            id="copyBtn"
+                            type="button"
+                            class="copy-btn"
+                        >
+                            Copy
+                        </button>
+
+                    </div>
+
+
+                    <a
+                        id="openBtn"
+                        class="open-btn"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Open Short Link ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="features-section">
+
+        <div class="section-heading">
+
+            <span class="section-label">HOW IT WORKS</span>
+
+            <h2>
+                Shorten a link in three simple steps.
+            </h2>
+
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature-card">
+
+                <div class="feature-number">01</div>
+
+                <div class="feature-icon">🔗</div>
+
+                <h3>Paste your URL</h3>
+
+                <p>
+                    Enter any long URL that you want to make shorter.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">02</div>
+
+                <div class="feature-icon">⚡</div>
+
+                <h3>Generate</h3>
+
+                <p>
+                    Our backend instantly creates a unique short link.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">03</div>
+
+                <div class="feature-icon">🚀</div>
+
+                <h3>Share anywhere</h3>
+
+                <p>
+                    Copy your new link and share it with anyone.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TECHNOLOGY -->
+
+    <section class="technology-section">
+
+        <p>POWERED BY</p>
+
+        <div class="tech-list">
+
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>MongoDB</span>
+            <span>Redis</span>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Linkly. Built with Node.js, Express, MongoDB & Redis.
+    </p>
+
+</footer>
+
+
+<!-- TOAST -->
+
+<div id="toast" class="toast">
+    <span>✓</span>
+    <span id="toastText">Copied!</span>
+</div>
+
+
+<script src="/main.js"></script>
+
+</body>
+</html>
